@@ -1,7 +1,13 @@
 package Classes;
 
+/**
+ * PromotionClient класс наследник Actor, отвечает за клиентов со спецусловиями
+ */
 public class SpecialClient extends Actor {
-
+    /**
+     * @param idVIP - уникальный номер спецклиента
+     *
+     */
     private int idVIP;
 
     public SpecialClient(String name, int idVIP) {

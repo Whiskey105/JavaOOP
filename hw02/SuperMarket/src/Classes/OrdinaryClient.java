@@ -1,5 +1,8 @@
 package Classes;
 
+/**
+ * OrdinaryClient класс наследник Actor. отчевает за обычных клиентов
+ */
 public class OrdinaryClient extends Actor {
 
     public OrdinaryClient(String name) {

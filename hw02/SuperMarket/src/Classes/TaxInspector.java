@@ -2,6 +2,10 @@ package Classes;
 
 import Interfaces.iActorBehaviour;
 
+/**
+ * TaxInspector класс, отвечает за отдельную сущность налогвого испектора, который не будет участвовать в обмене магазина.
+ * @param name - заранее устанавливается в конструкторе класса как "Tax Audit"
+ */
 public class TaxInspector implements iActorBehaviour {
     private String name;
     private boolean isTakeOrder;

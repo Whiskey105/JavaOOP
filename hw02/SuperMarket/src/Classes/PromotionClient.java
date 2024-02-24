@@ -1,12 +1,18 @@
 package Classes;
 
+/**
+ * PromotionClient класс наследник Actor, отвечает за клиентов - участников промоакакции
+ */
 public class PromotionClient extends Actor {
 
+    /**
+     * @param name - Имя клиента
+     * @param idPromoClient - идентификационный номер клиента
+     * @param promoActorAmount - статическое значение количесва участников промо акции
+     */
     private int idPromoClient;
     private String promoName;
     private static int promoActorAmount;
-
-
 
 
 

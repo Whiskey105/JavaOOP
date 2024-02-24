@@ -2,6 +2,7 @@ package Interfaces;
 
 import Classes.Actor;
 
+
 public interface iActorBehaviour {
     public boolean isTakeOrder();
     public boolean isMakeOrder();
