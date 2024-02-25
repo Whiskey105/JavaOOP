@@ -5,7 +5,6 @@ import java.util.List;
 import Domain.Student;
 import Domain.StudentGroup;
 import Domain.StudentSteam;
-import Domain.StudentSteam;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -50,6 +49,10 @@ public class App {
         Student s10 = new Student("Евгения",  23);
         Student s11 = new Student("Семен",  23);
         Student s12 = new Student("Елена",  23);
+        Student s13 = new Student("Алиса",  23);
+        Student s14 = new Student("Оксана",  23);
+        
+        
 
         List<Student> listStud2 = new ArrayList<Student>();
         listStud2.add(s7);
@@ -58,6 +61,9 @@ public class App {
         listStud2.add(s10);
         listStud2.add(s11);
         listStud2.add(s12);
+        listStud2.add(s13);
+        listStud2.add(s14);
+        
 
 
         StudentGroup group4582 = new StudentGroup(listStud2, 4582);
@@ -66,21 +72,18 @@ public class App {
         List<StudentGroup> studentGroups01 = new ArrayList<>();
         studentGroups01.add(group4582);
         studentGroups01.add(group4580);
-        StudentSteam steam01 = new StudentSteam(studentGroups01, 0001);
+        StudentSteam stream01 = new StudentSteam(studentGroups01, 0001);
 
-        System.out.println("=========================================================");
-        System.out.println("=============Stream Iteration Tets==============");
 
-        for(StudentGroup stg: steam01)
+        System.out.println("group4582.compareTo(group4580.getGroup()) = " + group4582.compareTo(group4580));
+
+        Collections.sort(stream01.getStream());
+        for(StudentGroup stg: stream01)
         {
-            System.out.println("GroupID = " + stg.getIdGroup());
-            for (Student std: stg)
-            {
 
-                System.out.println("Student = " + std);
-            }
+            System.out.println("stg = " + stg);
+
         }
-
 
 
     }
