@@ -13,12 +13,12 @@ public class TeacherService implements iPersonService<Teacher>{
     private List<Teacher> teachers;
     @Override
     public List<Teacher> getAll() {
-        return null;
+        return teachers;
     }
 
     @Override
     public void create(String name, int age) {
-        Teacher teacher = new Teacher(name, age, "high");
+        Teacher teacher = new Teacher(name, age, "Docent");
         count++;
         teachers.add(teacher);
     }

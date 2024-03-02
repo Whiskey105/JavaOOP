@@ -8,6 +8,7 @@ import Domain.PersonComparator;
 import Domain.Student;
 import Domain.StudentGroup;
 import Domain.Teacher;
+import Services.TeacherService;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -68,7 +69,11 @@ public class App {
         teachers.add(t2);
         System.out.println("Возраст преподавателей");
         System.out.println(AccountController.averageAge(teachers));
-
+        
+        for(Teacher tchr : teachers)
+        {
+            System.out.println(tchr);
+        }
 
     }
 }
