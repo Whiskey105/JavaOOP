@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Domain.ComplexNumber;
 import Model.Domain.Operation;
 import View.MainView;
 
@@ -35,9 +36,10 @@ public class ControllerClass {
         Command com = Command.NONE;
         boolean isRunning = true;
         printAllCommands();
-        Float firstOperandBuffer;
-        Float secondOperandBuffer;
-        Float resultBuffer;
+        ComplexNumber firstOperandBuffer;
+        ComplexNumber secondOperandBuffer;
+        ComplexNumber resultBuffer;
+
         Operation operationBuffer;
 
 
@@ -54,12 +56,12 @@ public class ControllerClass {
 
                 case DIV:
 
-                    firstOperandBuffer = Float.parseFloat(view.prompt("Enter the firstOperand: "));
-                    secondOperandBuffer = Float.parseFloat(view.prompt("Enter the secondOperand: "));
+                    firstOperandBuffer = new ComplexNumber(view.prompt("Enter the firstOperand realPart: "), view.prompt("Enter the firstOperand imaginaryPart: "));
+                    secondOperandBuffer = new ComplexNumber(view.prompt("Enter the secondOperand realPart: "), view.prompt("Enter the secondOperand imaginaryPart: "));
                     /**
                      * Проверка на деление на ноль
                      */
-                    if (secondOperandBuffer == 0)
+                    if (secondOperandBuffer.getRealPart() == 0 && secondOperandBuffer.getImaginaryPart() == 0)
                     {
                         System.out.println("You can't divide by zero!");
                         break;
@@ -79,8 +81,10 @@ public class ControllerClass {
                     break;
 
                 case MUL:
-                    firstOperandBuffer = Float.parseFloat(view.prompt("Enter the firstOperand: "));
-                    secondOperandBuffer = Float.parseFloat(view.prompt("Enter the secondOperand: "));
+
+                    firstOperandBuffer = new ComplexNumber(view.prompt("Enter the firstOperand realPart: "), view.prompt("Enter the firstOperand imaginaryPart: "));
+                    secondOperandBuffer = new ComplexNumber(view.prompt("Enter the secondOperand realPart: "), view.prompt("Enter the secondOperand imaginaryPart: "));
+
                     resultBuffer = CalcControllerClass.multiplication(firstOperandBuffer, secondOperandBuffer);
 
                     operationBuffer = new Operation(firstOperandBuffer, secondOperandBuffer, resultBuffer, "*");
@@ -91,8 +95,10 @@ public class ControllerClass {
                     break;
 
                 case SUB:
-                    firstOperandBuffer = Float.parseFloat(view.prompt("Enter the firstOperand: "));
-                    secondOperandBuffer = Float.parseFloat(view.prompt("Enter the secondOperand: "));
+
+                    firstOperandBuffer = new ComplexNumber(view.prompt("Enter the firstOperand realPart: "), view.prompt("Enter the firstOperand imaginaryPart: "));
+                    secondOperandBuffer = new ComplexNumber(view.prompt("Enter the secondOperand realPart: "), view.prompt("Enter the secondOperand imaginaryPart: "));
+
                     resultBuffer = CalcControllerClass.subtraction(firstOperandBuffer, secondOperandBuffer);
 
                     operationBuffer = new Operation(firstOperandBuffer, secondOperandBuffer, resultBuffer, "-");
@@ -103,8 +109,10 @@ public class ControllerClass {
                     break;
 
                 case SUM:
-                    firstOperandBuffer = Float.parseFloat(view.prompt("Enter the firstOperand: "));
-                    secondOperandBuffer = Float.parseFloat(view.prompt("Enter the secondOperand: "));
+
+                    firstOperandBuffer = new ComplexNumber(view.prompt("Enter the firstOperand realPart: "), view.prompt("Enter the firstOperand imaginaryPart: "));
+                    secondOperandBuffer = new ComplexNumber(view.prompt("Enter the secondOperand realPart: "), view.prompt("Enter the secondOperand imaginaryPart: "));
+
                     resultBuffer = CalcControllerClass.sum(firstOperandBuffer, secondOperandBuffer);
 
                     operationBuffer = new Operation(firstOperandBuffer, secondOperandBuffer, resultBuffer, "+");

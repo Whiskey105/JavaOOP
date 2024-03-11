@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface iGetModel {
     public List<String> getOperationsLog();
-    //public HashMap<Integer, String>getOperationLog();
+
 }
